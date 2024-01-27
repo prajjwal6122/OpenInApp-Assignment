@@ -38,8 +38,8 @@ export default function Login() {
       <div className='bg-primary hidden sm:flex items-center justify-center relative overflow-hidden'>
         {/* <div className='slanted-background'></div> */}
         <ToastContainer/>
-        <img className='w-150 h-150 m-8 object-cover absolute top-0 left-0' src={loginImg} alt="" />
-        <div className='text-white text-7xl font-bold absolute' style={{ top: '12rem' }}>
+        <img className='w-70 h-70 m-6 object-cover absolute top-0 left-0' src={loginImg} alt="" />
+        <div className='text-white text-7xl font-bold absolute' style={{ top: '20rem' }}>
           BASE
         </div>
         {/* Social Icons Container */}
@@ -52,31 +52,33 @@ export default function Login() {
       </div>
 
       <div className='bg-gray-100 flex flex-col rounded-md justify-center relative'>
-        <div className='icon-text-container rounded-md p-4'>
+        <div className='icon-text-container rounded-md p-2'>
           <form className='max-w-[500px] w-full mx-auto rounded-xl p-4 relative z-10'>
             <div className=''>
-            <h2 className='text-4xl font-bold  text-left'>Sign In</h2>
+            <h2 className='text-4xl font-bold pb-3 text-left'>Sign In</h2>
             <h3 className='text-sm text-left'>Sign In to Your Account</h3>
             </div>
             
-            <div className='flex w-full  justify-between py-8'>
-              <p className='border bg-white rounded-xl p-2 shadow-lg hover:shadow-xl w-full relative flex items-center rounded-md m-2'><AiFillFacebook className='mr-2' />Sign In with Facebook</p>
-              <p className='border bg-white rounded-xl p-2 shadow-lg hover:shadow-xl w-full relative flex items-center rounded-md m-2'><FcGoogle className='mr-2' /> Sign In with Google</p>
+            <div className='flex w-full  justify-between py-4'>
+              <p className='border bg-white rounded-2xl pr-2 pl-2 pb-2 pt-2 shadow-md hover:shadow-xl w-100 relative flex items-center rounded-md'><AiFillFacebook className='mr-2 text-2xl' />Sign In with Facebook</p>
+              <p className='border bg-white rounded-2xl pr-2 pl-2 pt-2 pb-2 shadow-md hover:shadow-xl w-100 relative flex items-center rounded-md'><FcGoogle className='mr-2 text-2xl' /> Sign In with Google</p>
             </div>
+            <div className='bg-white rounded-2xl pt-6 pb-4 pr-6 pl-6 '>
             <div className='flex flex-col py-2'>
-              <label>Username</label>
+              <label>Email Address</label>
               <input className='border p-2 rounded-md' onChange={(e)=>setUsername(e.target.value)} type="text" />
             </div>
             <div className='flex flex-col py-2'>
               <label>Password</label>
               <input className='border p-2 rounded-md' onChange={(e)=>setPassword(e.target.value)} type="password" />
             </div>
-            <button className='border w-full my-5 py-2 bg-indigo-600 hover:bg-indigo-500 text-white rounded-md' onClick={(e)=>handleSubmit(e)}>Sign In</button>
-            <div className='flex justify-between'>
-              <p className='flex items-center'>
-                <input className='mr-2' type="checkbox" /> Remember Me
+            <p className='flex items-center'>
+                <p className='text-indigo-600 text-sm pt-2'>Forgot Password ?</p>
               </p>
-              <p>Create an account</p>
+            <button className='border w-full my-2 py-1 bg-indigo-600 hover:bg-indigo-500 text-white rounded-md' onClick={(e)=>handleSubmit(e)}>Sign In</button>
+            </div>
+            <div className='p-4 flex justify-center'>
+              <p>Dont have an <span className=" text-indigo-600">Account</span></p>
             </div>
           </form>
         </div>

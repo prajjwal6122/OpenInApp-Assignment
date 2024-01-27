@@ -1,34 +1,4 @@
-/* login.css */
-/* Table Styling */
-.table {
-    width: 100%;
-    background-color: gray;
-    border-collapse: collapse;
-    margin-top: 1rem;
-  }
-  
-  /* Table Head Styling */
-  .table th {
-    border: 1px solid #ccc;
-    padding: 2rem;
-    text-align: left;
-  }
-  
-  /* Table Row Styling */
-  .table tr {
-    border-bottom: 1px solid #eee;
-  }
-  
-  /* Table Cell Styling */
-  .table td {
-    border: 1px solid #eee;
-    padding: 1rem; /* Adjusted padding for cells */
-  }
-  
-  /* Hover effect on rows */
-  .table tr:hover {
-    background-color: #f5f5f5;
-  }
+
   
   .slanted-background {
     position: absolute;
@@ -73,11 +43,11 @@
     justify-content: center;
     align-items: flex-end; /* Align icons to the bottom */
     height: 100%; /* Take full height */
-    margin-bottom: 120px; /* Add margin at the bottom */
+    margin-bottom: 80px; /* Add margin at the bottom */
   }
   
   .social-icons-container a {
-    margin: 0 20px; /* Adjust margin between icons as needed */
+    margin: 0 30px; /* Adjust margin between icons as needed */
     color: #fff;
     font-size: 40px; /* Increase icon size as needed */
   }

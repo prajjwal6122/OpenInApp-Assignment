@@ -9,7 +9,9 @@ module.exports = {
       textColor: {
         'primary': '#645cfc',
       },
-      
+      fontFamily: {
+        sans: ['"Montserrat"']
+      }
     },
   },
   plugins: [],

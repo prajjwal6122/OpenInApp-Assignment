@@ -2,7 +2,8 @@ import { useState } from 'react';
 import * as XLSX from 'xlsx';
 import { FaRegFileExcel, FaTimes } from 'react-icons/fa';
 import { FiUpload } from 'react-icons/fi';
-
+import { ToastContainer, toast } from 'react-toastify';
+import "./upload.css";
 function Upload() {
   // onchange states
   const [excelFile, setExcelFile] = useState(null);
@@ -69,6 +70,14 @@ function Upload() {
       });
 
       setExcelData(data);
+      toast.success("Excel File Uploaded Successfully", {
+        position:"top-right",
+      });
+    }
+    else{
+      toast.error("Please Input Excel File", {
+        position:"top-right",
+      });
     }
   };
 
@@ -82,20 +91,20 @@ function Upload() {
   };
 
   return (
-    <div className="flex flex-col bg-zinc-100 items-center justify-center h-screen">
+    <div className="container flex flex-col bg-zinc-100 items-center justify-center min-h-screen">
+      <ToastContainer/>
       <div className="wrapper bg-white p-4 mt-4 rounded-md w-full max-w-2xl border-primary relative border border-solid mb-4">
+      
         <div className="border border-solid border-gray-300">
-          <h1 className="text-2xl font-bold m-8">Upload & View Excel Sheets</h1>
-
           {/* upper part */}
-          <div className="pb-20 relative">
+          <div className="pb-20 pt-10 relative">
             <form className="form-group custom-form w-full">
               <div className="flex flex-col items-center w-full">
                 <input type="file" className="form-control mb-6" required onChange={handleFile} />
-                <span className="pb-8 size-xl">
+                <span className="pb-8 m-4 text-3xl">
                   <FaRegFileExcel />{' '}
                 </span>
-                <span className="text-gray-500 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-xl">
+                <span className="text-gray-500 pt-20 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-lg">
                   Drop your Excel sheet or <span className=" text-primary">Browse</span>
                 </span>
               </div>
@@ -104,10 +113,10 @@ function Upload() {
         </div>
 
         {/* lower part */}
-        <div className="py-8">
+        <div className="py-4">
           <button
             type="button"
-            className="btn bg-primary text-white px-8 py-4 rounded-md w-full flex items-center justify-center"
+            className="btn bg-primary text-white px-8 py-2 rounded-md w-full flex items-center justify-center"
             onClick={handleFileSubmit}
           >
             <span className="mr-2">
@@ -123,12 +132,11 @@ function Upload() {
           )}
         </div>
       </div>
-      <div className="items-left"><strong className="items-left text-gray-700 text-2xl font-bold">Uploads</strong></div>
+      <div ><h1 className="items-left text-gray-700 text-2xl font-bold">Uploads</h1></div>
       {currentItems && (
         
-        <div className="wrapper  w-full  ">
-          <div>
-            <div >
+        <div className="wrapper w-full ">
+            <div className='tablecontainer'>
               <table className="table-auto w-full bg-stone-200 p-4 rounded-xl mt-5 border-separate border-spacing-y-3 ">
                 <thead className='text-left  tracking-wider'>
                   <tr>
@@ -175,7 +183,7 @@ function Upload() {
                 </tbody>
               </table>
             </div>
-          </div>
+          
           {/* Pagination */}
           <div className="mt-4 flex justify-center">
             {Array.from({ length: Math.ceil(excelData?.length / itemsPerPage) }, (_, i) => (
