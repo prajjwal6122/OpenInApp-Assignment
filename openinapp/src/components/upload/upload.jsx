@@ -11,7 +11,7 @@ function Upload() {
   // submit state
   const [excelData, setExcelData] = useState(null);
   const [currentPage, setCurrentPage] = useState(1);
-  const itemsPerPage = 10;
+  const itemsPerPage = 5;
 
   const handleFile = (e) => {
     let fileTypes = [
@@ -82,7 +82,7 @@ function Upload() {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center h-screen">
+    <div className="flex flex-col bg-zinc-100 items-center justify-center h-screen">
       <div className="wrapper bg-white p-4 mt-4 rounded-md w-full max-w-2xl border-primary relative border border-solid mb-4">
         <div className="border border-solid border-gray-300">
           <h1 className="text-2xl font-bold m-8">Upload & View Excel Sheets</h1>
@@ -126,31 +126,31 @@ function Upload() {
       <div className="items-left"><strong className="items-left text-gray-700 text-2xl font-bold">Uploads</strong></div>
       {currentItems && (
         
-        <div className="wrapper bg-zinc-200 p-4 rounded-md w-full  border-primary relative border border-solid">
+        <div className="wrapper  w-full  ">
           <div>
             <div >
-              <table className="rounded-md w-full  ">
-                <thead className='bg-white rounded-md p-4 m-4'>
+              <table className="table-auto w-full bg-stone-200 p-4 rounded-xl mt-5 border-separate border-spacing-y-3 ">
+                <thead className='text-left  tracking-wider'>
                   <tr>
-                    <th>Sl No.</th>
-                    <th>Links</th>
-                    <th>Prefix</th>
-                    <th>Add Tags</th>
-                    <th>Selected Tags</th>
+                    <th className='p-4 '>SL No.</th>
+                    <th className='p-4'>Links</th>
+                    <th className='p-4'>Prefix</th>
+                    <th className='p-4'>Add Tags</th>
+                    <th className='p-4'>Selected Tags</th>
                   </tr>
                 </thead>
                 <tbody >
                   {currentItems.map((data, idx) => (
-                    <tr className='bg-white mb-4 rounded-md ' key={data.id}>
-                      <td>{idx + 1}</td>
-                      <td>
-                        <a href={data?.links} target="_blank">
+                    <tr tabindex="0" className='focus:outline-none h-14  bg-card rounded-3xl text-black bg-white' key={data.id}>
+                      <td className='p-4 '> {idx + 1}</td>
+                      <td className='p-4 '>
+                        <a href={data?.links} className='underline text-blue-400 hover:text-blue-800 visited:text-purple-600' target="_blank">
                           {data.links}
                         </a>
                       </td>
-                      <td>{data?.prefix}</td>
-                      <td>
-                        <select onChange={(e) => handleTagSelection(e, idx)}>
+                      <td className='p-4 '>{data?.prefix}</td>
+                      <td className='p-4 '>
+                        <select className='rounded-lg bg-gray-100 p-1' onChange={(e) => handleTagSelection(e, idx)}>
                           {data.select_tags?.map((tag) => (
                             <option key={tag} value={tag}>
                               {tag}
@@ -158,10 +158,10 @@ function Upload() {
                           ))}
                         </select>
                       </td>
-                      <td>
+                      <td className='p-4 '>
                         <div className="flex">
                           {data.selectedTags?.map((tag, tagIndex) => (
-                            <div key={tagIndex} className="tag-container">
+                            <div key={tagIndex} className="tag-container h-7">
                               {tag}{' '}
                               <span onClick={() => handleRemoveTag(idx, tagIndex)} className="cursor-pointer">
                                 <FaTimes />

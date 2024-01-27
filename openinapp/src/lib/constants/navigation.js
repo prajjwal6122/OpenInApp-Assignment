@@ -12,43 +12,43 @@ export const DASHBOARD_SIDEBAR_LINKS = [
 	{
 		key: 'dashboard',
 		label: 'Dashboard',
-		path: '/',
+		path: '/layout',
 		icon: <GridViewRoundedIcon />
 	},
 	{
 		key: 'Upload',
 		label: 'Upload',
-		path: '/upload',
+		path: '/layout/upload',
 		icon: <PollIcon />
 	},
 	{
 		key: 'Invoice',
 		label: 'Invoice',
-		path: '/invoice',
+		path: '/layout/invoice',
 		icon: <DescriptionIcon />
 	},
 	{
 		key: 'Schedule',
 		label: 'Schedule',
-		path: '/schedule',
+		path: '/layout/schedule',
 		icon: <TextSnippetIcon />
 	},
 	{
 		key: 'calendar',
 		label: 'Calendar',
-		path: '/calendar',
+		path: '/layout/calendar',
 		icon: <CalendarMonthIcon />
 	},
 	{
 		key: 'Notification',
 		label: 'Notification',
-		path: '/notification',
+		path: '/layout/notification',
 		icon: <NotificationsIcon />
 	},
     {
 		key: 'Settings',
 		label: 'Settings',
-		path: '/settings',
+		path: '/layout/settings',
 		icon: <SettingsIcon />
 	}
 ]
@@ -57,7 +57,7 @@ export const DASHBOARD_SIDEBAR_BOTTOM_LINKS = [
 	{
 		key: 'Logout',
 		label: 'Log Out',
-		path: '/login',
+		path: '/',
 		icon: <LogoutIcon />
 	},
 	

@@ -1,5 +1,5 @@
-import logo from './logo.svg';
-import '../src/App.css';
+// App.js
+import React from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Layout from './components/shared/Layout';
 import Dashboard from './components/dashBoard/dashboard';
@@ -14,20 +14,23 @@ import Settings from './components/settings/settings';
 function App() {
   return (
     <div className="App">
-     <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<Layout />}>
-        <Route index element={<Dashboard/>}/>
-        <Route path='/upload' element={<Upload/>}/>
-        <Route path='/invoice' element={<Invoice/>}/>
-        <Route path='/schedule' element={<Schedule/>}/>
-        <Route path='/calendar' element={<Calendar/>}/>
-        <Route path='/notification' element={<Notification/>}/>
-        <Route path='/settings' element={<Settings/>}/>
-        </Route>
-        <Route path='/login' element={<Login/>}/>
-      </Routes>
-    </BrowserRouter>
+      <BrowserRouter>
+        <Routes>
+          {/* Set Login as the default route */}
+          <Route path="/" element={<Login />} index />
+
+          {/* Nested route for other pages */}
+          <Route path="/layout" element={<Layout />}>
+            <Route index element={<Dashboard />} />
+            <Route path="/layout/upload" element={<Upload />} />
+            <Route path="/layout/invoice" element={<Invoice />} />
+            <Route path="/layout/schedule" element={<Schedule />} />
+            <Route path="/layout/calendar" element={<Calendar />} />
+            <Route path="/layout/notification" element={<Notification />} />
+            <Route path="/layout/settings" element={<Settings />} />
+          </Route>
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 }

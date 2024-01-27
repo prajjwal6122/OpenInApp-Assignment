@@ -13,28 +13,28 @@ export default function Header() {
         const pathname = location.pathname
         let newModuleName = ''
         switch (pathname) {
-            case '/profile':
+            case '/layout/profile':
                 setModuleName('Profile Module')
                 break
-            case '/settings':
+            case '/layout/settings':
                 setModuleName('Settings Module')
                 break
-            case '/login':
+            case '/layout/login':
                 setModuleName('Login Module')
                 break
-            case '/upload':
+            case '/layout/upload':
                 setModuleName('Upload CSV')
                 break
-            case '/notification':
+            case '/layout/notification':
                 setModuleName('Notification')
                 break
-            case '/calendar':
+            case '/layout/calendar':
                 setModuleName('Calendar')
                 break
-            case '/schedule':
+            case '/layout/schedule':
                 setModuleName('Schedule')
                 break
-            case '/invoice':
+            case '/layout/invoice':
                 setModuleName('Invoice')
                 break
             default:
