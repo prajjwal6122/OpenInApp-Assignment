@@ -18,7 +18,7 @@ export default function SideBar() {
                     return <SideBarLinks key={item.key} item={item} />
                 })}
             </div>
-            <div className="flex flex-col gap-0.5 pt-2 border-t border-neutral-700">
+            <div className="flex flex-col gap-0.5 pt-2 ">
                 <div className={classNames(linkClass, 'cursor-pointer text-red-500')}>
                     {DASHBOARD_SIDEBAR_BOTTOM_LINKS.map((item) => (
                         <SideBarLinks key={item.key} item={item} />

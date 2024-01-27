@@ -9,6 +9,7 @@ module.exports = {
       textColor: {
         'primary': '#645cfc',
       },
+      
     },
   },
   plugins: [],
